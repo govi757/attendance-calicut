@@ -19,7 +19,7 @@ const UserSchema = mongoose.Schema({
         required: true,
         minlength: 3,
         maxlength: 255
-    },
+    }
 },
     {
         timeStamps: true
