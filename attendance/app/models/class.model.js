@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const ClassSchema = mongoose.Schema({
     name: String,
     strength: Number,
-    totalAttendance: Number
+    totalAttendance: Number,
+    userId: String
 },
 {
     timeStamps: true

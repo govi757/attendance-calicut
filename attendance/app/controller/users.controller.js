@@ -43,6 +43,8 @@ exports.login = (req,res) => {
                 if(passwordMatched==true) {
                     let token = jwt.sign({email:student.email}, config.JWT_SECRET,{expiresIn: '2d'});
                     
+                    req.session.userId=student.id;
+
                     res.send({
                     message:"Success",
                     token: token

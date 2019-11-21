@@ -9,8 +9,10 @@ exports.create = (req,res) => {
     const classScema = new ClassSchema({
         name: req.body.name,
         strength: 0,
-        totalAttendance: 0
+        totalAttendance: 0,
+        userId: req.session.userId
     });
+    console.log(req.session.userId)
 
     classScema.save().then(data => {
         res.send(data);
@@ -24,7 +26,7 @@ exports.create = (req,res) => {
 }
 
 exports.findAll = (req,res) => {
- ClassSchema.find().then(classes => {
+ ClassSchema.find({userId: req.session.userId}).then(classes => {
      res.send(classes);
  }).catch(err => {
      res.status(500).send({

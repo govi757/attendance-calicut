@@ -2,9 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
+const session = require('express-session');
+
+
 
 const app = express();
-
+app.use(session({
+    secret: 'attendance',
+    resave: false,
+    saveUninitialized: true
+  }))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
