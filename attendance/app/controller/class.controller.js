@@ -10,7 +10,8 @@ exports.create = (req,res) => {
         name: req.body.name,
         strength: 0,
         totalAttendance: 0,
-        userId: req.session.userId
+        userId: req.session.userId,
+        trackAttendance: []
     });
     console.log(req.session.userId)
 

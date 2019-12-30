@@ -4,7 +4,8 @@ const ClassSchema = mongoose.Schema({
     name: String,
     strength: Number,
     totalAttendance: Number,
-    userId: String
+    userId: String,
+    trackAttendance: Array
 },
 {
     timeStamps: true

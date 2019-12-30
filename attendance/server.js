@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 
 
-
 const app = express();
 app.use(session({
     secret: 'attendance',
@@ -14,6 +13,11 @@ app.use(session({
   }))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    next();
+  });
 
 const classRoute = require('./app/routes/attendance.route');
 
