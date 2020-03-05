@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const TotalAttendance = mongoose.Schema({
     classId: String,
-    rollNumbers: Array
+    rollNumbers: Array,
+    date: Date
 },
 {
     timeStamps: true

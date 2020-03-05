@@ -14,5 +14,5 @@ module.exports = (app) => {
     app.get('/class/:classId', classController.findOne);
     app.get('/student/:classId', studentController.findAll);
     app.get('/get-total-attendance/:classId', studentController.getTotalAttendanceForClass)
-    app.post('/totalAttendance', studentController.submitTodaysAtendance);
+    app.post('/totalAttendance/:classId', studentController.submitTodaysAtendance);
 }

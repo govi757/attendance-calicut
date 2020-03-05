@@ -144,6 +144,7 @@ exports.findOne = (req, res) => {
 
 exports.submitTodaysAtendance = (req, res) => {
     totalAttendanceSchema = new TotalAttendance({
+        date: new Date(),
         classId: req.body.classId,
         rollNumbers: req.body.rollNumbers
     });
